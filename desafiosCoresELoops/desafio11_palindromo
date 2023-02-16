@@ -1,0 +1,7 @@
+frase = input("Digite uma frase: ").replace(" ", "").upper()
+fraseInvertida = frase[::-1].upper()
+print(frase, fraseInvertida)
+if frase == fraseInvertida:
+    print("O texto digitado\033[1;32m é Palíndromo \033[m")
+else:
+    print("O texto digitado\033[1;31m não é Palíndromo \033[m")
