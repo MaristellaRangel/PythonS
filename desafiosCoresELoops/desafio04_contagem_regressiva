@@ -1,0 +1,5 @@
+from time import sleep
+print("-"*20 + "Contagem Regressiva"+"-"*20)
+for i in range(10, -1, -1):
+    print(i)
+    sleep(1) #delay de 1s
