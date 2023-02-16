@@ -1,0 +1,17 @@
+from datetime import date
+anoAtual = date.today().year
+totalMaiores = 0
+totalMenores = 0
+for i in range(7):
+    anoNasc = int(input(f"Ano de nascimento da {i+1}ª pessoa: "))
+    if anoNasc > anoAtual:
+      print("\033[1;31m Data inválida\033[m")
+      continue
+    else:
+      if anoAtual - anoNasc >= 18:
+        totalMaiores += 1
+      else:
+        totalMenores += 1
+print(f"Total Maiores: \033[1;34m {totalMaiores}\033[m")
+print(f"Total Menores: \033[1;31m {totalMenores}\033[m")
+        
