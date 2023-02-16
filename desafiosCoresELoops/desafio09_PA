@@ -1,0 +1,6 @@
+primeiroTermo = int(input("Primeiro Termo: "))
+razao = int(input("Razao: "))
+
+for n in range(10):
+    print(primeiroTermo, end=" ")
+    primeiroTermo = primeiroTermo + razao
