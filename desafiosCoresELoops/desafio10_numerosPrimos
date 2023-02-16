@@ -6,7 +6,7 @@ for i in range(1, num+1):
         divisores += 1
     else:
         print(f"\033[1;31m {i}\033[m", end="")
-if divisores >= 2:
+if divisores == 2:
     print(f"\nO número {num} é primo")
 else:
     print(f"\nO número {num} não é primo")
