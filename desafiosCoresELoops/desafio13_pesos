@@ -1,0 +1,15 @@
+pesos = []
+for i in range(5):
+  peso = float(input(f"Digite o peso da {i+1}ª pessoa: "))
+  pesos.append(peso)
+
+maior = pesos[0]
+menor = pesos[0]
+
+for p in pesos:
+  if p > maior:
+    maior = p
+  if p < menor:
+    menor = p
+print(f"Maior peso \033[1;31m {maior}\033[m")
+print(f"Menor peso \033[1;34m{menor}\033[m")
