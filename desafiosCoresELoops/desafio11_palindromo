@@ -1,7 +1,7 @@
 from unidecode import unidecode
 frase = input("Digite uma frase: ").replace(" ", "").upper()
 frase = unidecode(frase) #tirar acentos
-fraseInvertida = frase[::-1].upper()
+fraseInvertida = frase[::-1]
 print(frase, fraseInvertida)
 if frase == fraseInvertida:
     print("O texto digitado\033[1;32m é Palíndromo \033[m")
