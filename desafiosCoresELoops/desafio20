@@ -1,0 +1,31 @@
+nomesM = []
+idadesM = []
+idadesF = []
+somaIdades = 0
+
+for i in range(4):
+  print("-"*20, (i+1),"ª Pessoa: ", "-"*20)
+  nome = input("Nome: ")
+  idade = int(input("Idade: "))
+  sexo = input("Sexo(M/F): ").upper()
+  if sexo == "M":
+    nomesM.append(nome)
+    idadesM.append(idade)
+  elif sexo == "F":
+    idadesF.append(idade)
+  else:
+    print("Opção inválida")
+    continue
+  somaIdades += idade
+maiorM = 0
+for idade in idadesM:
+  if idade > maiorM:
+    maiorM = idade
+indiceMaiorM = idadesM.index(maiorM)
+menorVinte = 0
+for idade in idadesF:
+    if idade < 20:
+       menorVinte += 1 
+print(f"Média de idade: {somaIdades//4}")
+print(f"Nome do homem mais velho: {nomesM[indiceMaiorM]}")
+print(f"Mulheres abaixo de 20 anos: {menorVinte}")
