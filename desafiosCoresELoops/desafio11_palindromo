@@ -1,4 +1,6 @@
+from unidecode import unidecode
 frase = input("Digite uma frase: ").replace(" ", "").upper()
+frase = unidecode(frase) #tirar acentos
 fraseInvertida = frase[::-1].upper()
 print(frase, fraseInvertida)
 if frase == fraseInvertida:
