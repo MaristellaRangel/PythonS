@@ -1,0 +1,13 @@
+numeros = []
+
+for i in range(5):
+    numero = int(input(f"Digite um número na posição {i}: "))
+    numeros.append(numero)
+
+menor = min(numeros)
+maior = max(numeros)
+posMenor = numeros.index(menor)
+posMaior = numeros.index(maior)
+print(f"Lista: {numeros}")
+print(f"Maior: {maior} na posição {posMaior}")
+print(f"Menor: {menor} na posição {posMenor}")
