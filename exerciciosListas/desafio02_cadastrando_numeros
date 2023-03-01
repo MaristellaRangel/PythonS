@@ -1,0 +1,14 @@
+numeros = []
+while(True):
+    numero = int(input("Digite um número: "))
+    if numero  not in numeros:
+        numeros.append(numero)
+        print(f"Sucesso... Lita = {numeros}")
+    else:
+        print(f"Duplicado... Lista = {numeros}")
+
+    resposta = input("Deseja continuar [S/N]: ").lower()
+    if resposta[0] != 's':
+        numeros.sort()
+        print(f"Lista = {numeros}")
+        break
