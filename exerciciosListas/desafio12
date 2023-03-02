@@ -1,0 +1,18 @@
+aluno = [] #[nome, nota1, nota2]
+alunos = []
+
+while True:
+    nome = input("Nome: ")
+    aluno.append(nome)
+    nota1 = float(input("Nota 1: "))
+    aluno.append(nota1)
+    nota2 = float(input("Nota 2: "))
+    aluno.append(nota2)
+    alunos.append(aluno.copy())
+    aluno.clear()
+    resposta = input("Continyar [S/N]: ")
+    if resposta[0].lower() != "s":
+        break
+print("N°\tNome\tMédia")
+for i in range(len(alunos)):
+    print(f"{i}\t {alunos[i][0]}\t{(alunos[i][1] + alunos[i][2])/2}")
