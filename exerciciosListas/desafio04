@@ -1,0 +1,14 @@
+numeros = list()
+
+while True:
+    num = int(input("Digite um valor: "))
+    numeros.append(num)
+    resposta = input("Deseja continuar? [S/N]: ")
+    if resposta[0].lower() != "s":
+        break
+print(f"Quantidade de valores: {len(numeros)}")
+numeros.sort()
+numeros.reverse()
+print(f"Valores decrescentes: {numeros}")
+estaNaLista = "5 está na lista" if 5 in numeros else "5 não está na lista"
+print(estaNaLista)
