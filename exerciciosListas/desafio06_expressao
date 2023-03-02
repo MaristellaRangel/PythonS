@@ -1,8 +1,24 @@
+def validarOrdemParametros(qtd, exp):
+    for i in range(qtd):
+       if exp.index("(") < exp.index(")"):
+           valido = True
+           exp = exp.replace("(","",1).replace(")","",1)
+       else:
+           valido = False
+           break
+    return valido
+
+
 expressao = input("Expressão: ")
 qtdParentesesAbertos = expressao.count("(")
 qtdParentesesFechados = expressao.count(")")
+qtdTestes = int(qtdParentesesAbertos + qtdParentesesFechados)//2
 
-if qtdParentesesAbertos == qtdParentesesFechados and expressao.index("(") < expressao.index(")"):
-    print("Expressão válida...")
+
+if qtdParentesesAbertos == qtdParentesesFechados:
+    if validarOrdemParametros(qtdTestes, expressao):
+        print("Expressão válida!")
+    else:
+        print("Expressão inválida : parênteses fechados antes de parênteses abertos")
 else:
-    print("Expressão inválida")
+    print("Expressão inválida : quantidade de parênteses abertos diferente da quantidade de parênteses fechados")
