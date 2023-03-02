@@ -1,0 +1,12 @@
+numeros = []
+numerosOrdenados = []
+for i in range(5):
+    numero = int(input(f"Digite o {i+1}° número: "))
+    numeros.append(numero)
+
+for i in range(5):
+    menor = min(numeros)
+    numerosOrdenados.append(menor)
+    numeros.remove(menor)
+
+print(numerosOrdenados)
