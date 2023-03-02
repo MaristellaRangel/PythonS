@@ -1,0 +1,18 @@
+numeros = list()
+numerosPares = list()
+numerosImpares = list()
+
+while True:
+    num = int(input("Digite um valor: "))
+    numeros.append(num)
+    if num % 2 == 0:
+        numerosPares.append(num)
+    else:
+        numerosImpares.append(num)
+    resposta = input("Deseja continuar? [S/N]: ")
+    if resposta[0].lower() != "s":
+        break
+
+print(f"Lista: {numeros}")
+print(f"Pares: {numerosPares}")
+print(f"Ímpares: {numerosImpares}")
