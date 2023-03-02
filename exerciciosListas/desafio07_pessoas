@@ -1,0 +1,30 @@
+pessoa = [] #[nome,peso]
+pessoas = []
+while True:
+    nome = input("Nome: ")
+    pessoa.append(nome)
+    peso = float(input("Peso: "))
+    pessoa.append(peso)
+    pessoas.append(pessoa.copy())
+    pessoa.clear()
+    resposta = input("Deseja continuar [S/N]: ")
+    if resposta[0].lower() != "s":
+        break
+
+qtdPessoas = len(pessoas)
+maiorPeso = pessoas[0][1]
+menorPeso = pessoas[0][1]
+nomeMaiorPeso = " "
+nomeMenorPeso = " "
+for p in pessoas:
+    if p[1] > maiorPeso:
+        maiorPeso = p[1]
+        nomeMaiorPeso = p[0]
+    else:
+        menorPeso = p[1]
+        nomeMenorPeso = p[0]
+
+print(f"Dados cadastrados: {pessoas}")
+print(f"Total de cadastros: {qtdPessoas}")
+print(f"Maior peso: {nomeMaiorPeso} com {maiorPeso}Kg")
+print(f"Menor peso: {nomeMenorPeso} com {menorPeso}Kg")
