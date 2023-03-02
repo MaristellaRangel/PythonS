@@ -1,0 +1,8 @@
+expressao = input("Expressão: ")
+qtdParentesesAbertos = expressao.count("(")
+qtdParentesesFechados = expressao.count(")")
+
+if qtdParentesesAbertos == qtdParentesesFechados and expressao.index("(") < expressao.index(")"):
+    print("Expressão válida...")
+else:
+    print("Expressão inválida")
