@@ -1,0 +1,18 @@
+import random
+
+jogo = []
+jogos = []
+
+print("MEGA SENA")
+qtdJogos = int(input("Quantos jogos deseja: "))
+print(f"Sorteando {qtdJogos} jogos")
+
+for j in range(qtdJogos):
+    for num in range(6):
+        jogo.append(random.randint(1,60))
+    jogos.append(jogo.copy())
+    jogo.clear()
+
+for i in range(qtdJogos):
+    print(f"Jogo {i+1}: {jogos[i]}")
+    
