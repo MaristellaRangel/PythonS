@@ -1,4 +1,4 @@
-aluno = [] #[nome, nota1, nota2]
+aluno = [] #[nome, n1, n2]
 alunos = []
 
 while True:
@@ -6,13 +6,26 @@ while True:
     aluno.append(nome)
     nota1 = float(input("Nota 1: "))
     aluno.append(nota1)
-    nota2 = float(input("Nota 2: "))
+    nota2 = float( input("Nota 2: "))
     aluno.append(nota2)
     alunos.append(aluno.copy())
     aluno.clear()
-    resposta = input("Continyar [S/N]: ")
-    if resposta[0].lower() != "s":
+    resp = input("Continuar [S/N]: ")
+    if resp[0].lower() != "s":
         break
-print("N°\tNome\tMédia")
-for i in range(len(alunos)):
-    print(f"{i}\t {alunos[i][0]}\t{(alunos[i][1] + alunos[i][2])/2}")
+print(alunos)
+
+print(f"Nº\tNome\tMédia")
+for a in range(len(alunos)):
+    media = ( alunos[a][1] + alunos[a][2])/2
+    print(f"{a}\t{alunos[a][0]}\t{media}")
+
+while True:
+    opc = int(input("Digite o número de um aluno ou 999: "))
+    if opc == 999:
+        break
+
+    if opc < 0 or opc >= len(alunos):
+        print("Número inválido")
+    else:
+        print(f"Notas de {alunos[opc][0]} são: {alunos[opc][1:]}")
