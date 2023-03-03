@@ -12,7 +12,7 @@ def validarOrdemParametros(qtd, exp):
 expressao = input("Expressão: ")
 qtdParentesesAbertos = expressao.count("(")
 qtdParentesesFechados = expressao.count(")")
-qtdTestes = int(qtdParentesesAbertos + qtdParentesesFechados)//2
+qtdTestes = (qtdParentesesAbertos + qtdParentesesFechados) // 2
 
 
 if qtdParentesesAbertos == qtdParentesesFechados:
