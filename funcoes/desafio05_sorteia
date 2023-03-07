@@ -1,0 +1,27 @@
+from random import randint
+from time import sleep
+
+numeros = []
+def sorteia():
+    print("Sorteando: ", end=" ")
+    for i in range(5):
+        num = randint(1, 10)
+        print(num, end=" ")
+        numeros.append(num)
+        sleep(0.5)
+    return numeros
+
+def somaPar(lista):
+    somaPares = 0
+    for valor in lista:
+        if valor % 2 == 0:
+            somaPares += valor
+    return somaPares
+
+
+print("-"*60)
+numeros = sorteia()
+print("")
+print(f"Lista: {numeros}")
+print(f"Soma dos pares = {somaPar(numeros)}")
+print("-"*60)
