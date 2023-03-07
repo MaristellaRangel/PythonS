@@ -1,0 +1,28 @@
+from datetime import date
+ano_atual = date.today().year
+
+pessoa = {}
+
+nome = input("Nome: ")
+pessoa['nome'] = nome
+
+ano_nasc = int(input("Ano de nascimento: "))
+pessoa['ano_nascimento'] = ano_nasc
+
+ctps = input("Carteira de Trabalho: ") #carteira de trabalho
+pessoa['ctps'] = ctps
+
+idade = ano_atual - ano_nasc
+pessoa['idade'] = idade
+
+if len(ctps) != 0:
+    ano_contratacao = int(input("Ano de contratação: "))
+    pessoa['ano_contratacao'] = ano_contratacao
+    salario = float(input("Salário: R$"))
+    pessoa['salario'] = salario
+    idade_aposentadoria = idade + ((ano_contratacao + 35) - ano_atual)
+    pessoa['aposentadoria'] = idade_aposentadoria
+
+for chave, valor in pessoa.items():
+    print(f"{chave} = {valor}")
+
