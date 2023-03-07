@@ -1,0 +1,8 @@
+def escreva(texto):
+    print("-"*20)
+    print(texto)
+    print("-" * 20)
+
+for i in range(3):
+    msg = input(f"{i+1} mensagem: ")
+    escreva(msg)
