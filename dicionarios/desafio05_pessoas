@@ -1,0 +1,47 @@
+pessoa = {}
+pessoas = []
+
+while True:
+    nome = input("Nome: ")
+    pessoa['nome'] = nome
+
+    sexo = input("Sexo: ").lower()
+    if sexo != 'f' and sexo != 'm':
+        print("Digite apenas M ou F")
+        sexo = input("Sexo: ").lower()
+    pessoa['sexo'] = sexo
+
+    idade = int(input("Idade: "))
+    pessoa['idade'] = idade
+
+    pessoas.append(pessoa.copy())
+    resposta = input("Deseja continuar? [S/N]: ").lower()
+    if resposta != 'n' and resposta != 's':
+        print('Somente "S" ou "N"')
+        resposta = input("Deseja continuar? [S/N]: ").lower()
+    if resposta == 'n':
+        break
+print("-" * 60)
+
+qtd_pessoas_cadastradas = len(pessoas)
+
+soma_idades = 0
+mulheres = []
+for p in pessoas:
+    soma_idades += p['idade']
+    if p['sexo'] == 'f':
+        mulheres.append(p['nome'])
+media_idades = soma_idades / qtd_pessoas_cadastradas
+
+print(f"Total de pessoas cadastradas é {qtd_pessoas_cadastradas}")
+print("-"*60)
+print(f"A média das idades é {media_idades:.2f}")
+print("-"*60)
+print(f"Mulheres cadastradas {mulheres}")
+print("-"*60)
+
+print("Pessoas com idade acima da média: ")
+for p in pessoas:
+    if p['idade'] > media_idades:
+        print(p)
+print("-"*60)
