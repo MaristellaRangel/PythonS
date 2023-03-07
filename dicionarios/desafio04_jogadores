@@ -1,0 +1,30 @@
+jogador = dict()
+gols = list()
+
+nome = input("Nome do(a) jogador(a): ")
+num_partidas = int(input("Número de partidas: "))
+total_gols = 0
+
+for i in range(num_partidas):
+    numero_gols = int(input(f"Gols na {i+1}ª partida: "))
+    gols.append(numero_gols)
+    total_gols += numero_gols
+
+jogador['nome'] = nome
+jogador['gols'] = gols
+jogador['total'] = total_gols
+
+print("-"*60)
+print(jogador)
+print("-"*60)
+
+for indice, valor in jogador.items():
+    print(f"O campo {indice} tem o valor {valor}.")
+print("-"*60)
+
+print(f"O(a) jogador(a) {nome} jogou {num_partidas} partida(s)")
+print("-"*60)
+
+for i in range(num_partidas):
+    print(f"Na parida {i+1}, fez {gols[i]} gol(s).")
+    
