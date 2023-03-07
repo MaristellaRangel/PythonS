@@ -1,0 +1,16 @@
+def maior(*valores):
+    print("Analisando os valores")
+    print(*valores)
+    maior_valor = valores[0]
+    for valor in valores:
+        if valor > maior_valor:
+            maior_valor = valor
+    print(f"Maior valor = {maior_valor}")
+
+
+print("-"*60)
+maior(3,6,2,7,9)
+print("-"*60)
+
+maior(1,3,8,2,5)
+print("-"*60)
