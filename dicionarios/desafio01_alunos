@@ -1,0 +1,21 @@
+aluno = {}
+
+nome = input("Aluno (a): ")
+aluno['nome'] = nome
+
+media = float(input(f"Média de {nome}: "))
+aluno['media'] = media
+
+situacao = ""
+if media <= 3.9:
+    situacao = "Reprovado"
+elif media <= 6.9:
+    situacao = "Recuperação"
+else:
+    situacao = "Aprovado"
+aluno['situacao'] = situacao
+print(aluno)
+
+for chave, valor in aluno.items():
+    print(f"{chave} é igual a {valor}")
+    
