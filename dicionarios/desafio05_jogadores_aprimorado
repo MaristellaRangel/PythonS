@@ -1,0 +1,46 @@
+jogadores = []
+while True:
+    jogador = dict()
+    gols = list()
+
+    nome = input("Nome do(a) jogador(a): ")
+    num_partidas = int(input("Número de partidas: "))
+
+    for i in range(num_partidas):
+        numero_gols = int(input(f"Gols na {i + 1}ª partida: "))
+        gols.append(numero_gols)
+
+    jogador['nome'] = nome
+    jogador['gols'] = gols
+    jogador['numero_partidas'] = num_partidas
+    jogador['total_gols'] = sum(gols)
+
+    jogadores.append(jogador.copy())
+
+    resposta = input("Deseja continuar? [S/N]: ").lower()
+    if resposta != 'n' and resposta != 's':
+        print("Erro! Digite apenas S ou N.")
+        resposta = input("Deseja continuar? [S/N]: ").lower()
+    if resposta == 'n':
+        break
+
+print("-"*60)
+print("Jogador\t\tGols\t\tTotal")
+for i in range(len(jogadores)):
+    print(f"{i+1}º {jogadores[i]['nome']}\t\t{jogadores[i]['gols']}\t{jogadores[i]['total_gols']}")
+print("-"*60)
+
+while True:
+    cod = int(input("Digite o número do jogador para resumir ou 999 para sair: "))
+    if cod == 999:
+        break
+    if cod <= 0 or cod > len(jogadores):
+       print("Valor inválido")
+    else:
+       indice_jogador = cod - 1
+       nome_j = jogadores[indice_jogador]['nome']
+       gols_j = jogadores[indice_jogador]['gols']
+       num_partidas_j = jogadores[indice_jogador]['numero_partidas']
+       print(F"--------- JOGADOR(A) {nome_j}---------")
+       for i in range(num_partidas_j):
+           print(f"No jogo {i + 1} , {nome_j} fez {gols_j[i]} gols.")
