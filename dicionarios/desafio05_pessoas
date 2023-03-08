@@ -6,7 +6,7 @@ while True:
     pessoa['nome'] = nome
 
     sexo = input("Sexo: ").lower()
-    if sexo != 'f' and sexo != 'm':
+    while sexo != 'f' and sexo != 'm':
         print("Digite apenas M ou F")
         sexo = input("Sexo: ").lower()
     pessoa['sexo'] = sexo
@@ -16,7 +16,7 @@ while True:
 
     pessoas.append(pessoa.copy())
     resposta = input("Deseja continuar? [S/N]: ").lower()
-    if resposta != 'n' and resposta != 's':
+    while resposta != 'n' and resposta != 's':
         print('Somente "S" ou "N"')
         resposta = input("Deseja continuar? [S/N]: ").lower()
     if resposta == 'n':
