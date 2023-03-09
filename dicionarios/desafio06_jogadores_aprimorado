@@ -18,7 +18,7 @@ while True:
     jogadores.append(jogador.copy())
 
     resposta = input("Deseja continuar? [S/N]: ").lower()
-    if resposta != 'n' and resposta != 's':
+    while resposta != 'n' and resposta != 's':
         print("Erro! Digite apenas S ou N.")
         resposta = input("Deseja continuar? [S/N]: ").lower()
     if resposta == 'n':
