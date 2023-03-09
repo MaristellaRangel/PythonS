@@ -15,14 +15,14 @@ pessoa['ctps'] = ctps
 idade = ano_atual - ano_nasc
 pessoa['idade'] = idade
 
-if len(ctps) != 0:
+if len(ctps) != 0 and ctps != '0':
     ano_contratacao = int(input("Ano de contratação: "))
     pessoa['ano_contratacao'] = ano_contratacao
     salario = float(input("Salário: R$"))
     pessoa['salario'] = salario
-    idade_aposentadoria = idade + ((ano_contratacao + 35) - ano_atual)
+    ano_aposentadoria = ano_contratacao + 35
+    idade_aposentadoria = idade + (ano_aposentadoria - ano_atual)
     pessoa['aposentadoria'] = idade_aposentadoria
 
 for chave, valor in pessoa.items():
     print(f"{chave} = {valor}")
-
